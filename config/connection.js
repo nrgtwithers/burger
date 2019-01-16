@@ -1,32 +1,24 @@
-// Dependencies
-var express = require("express");
-var exphbs = require("express-handlebars");
+var mysql = require("mysql");
 
-// Create an instance of the express app.
-var app = express();
+// create the connection information for the sql database
+var connection = mysql.createConnection({
+  host: "localhost",
 
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var PORT = process.env.PORT || 3000;
+  // Your port; if not 3306
+  port: 3306,
 
-// Set Handlebars as the default templating engine.
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+  // Your username
+  user: "root",
 
-//Routes
-// app.get("/weekend", function(req, res) {
-//     res.render("index", lunches[1]);
-//   });
-  
-//   app.get("/lunches", function(req, res) {
-//     res.render("all-icecreams", {
-//       foods: icecreams,
-//       eater: "david"
-//     });
-//   });
+  // Your password
+  password: "",
+  database: "burgers_db"
+});
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+// connect to the mysql server and sql database
+connection.connect(function(err) {
+  if (err) throw err;
+  console.log("connected as id " + connection.threadId + "\n");
+});
+
+module.exports = connection;
