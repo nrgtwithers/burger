@@ -8,4 +8,16 @@ router.get('/', function(req, res){
     })
 })
 
+router.post('/add', function(req,res){
+    burger.insertOne(function(data){
+        res.render("index",{burgers:data})
+    })
+})
+
+router.put('/update', function(req,res){
+    burger.updateOne(function(data){
+        res.render('index', {burgers:data})
+    })
+})
+
 module.exports = router;
