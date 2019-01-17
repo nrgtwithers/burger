@@ -1,4 +1,22 @@
 {{!-- //Render data --}}
-{{#each burgers}}
+{{!-- {{#each burgers}}
 <h4>{{this.burger_name}}</h4>
-{{/each}}
+{{/each}} --}}
+
+
+<!-- Pass in data from server.js -->
+  {{#each burgers}}
+      <p><span class="label"></span> {{this.burger_name}}</p>
+      <button data-id="{{this.id}}" class="delquote">Devour it!</button>
+  {{/each}}
+
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="quo"><h2>Add a YUMMY burger!</h2></label>
+    <br>
+    <textarea id="quo" name="quote" rows="2" cols="40"></textarea>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
