@@ -1,40 +1,29 @@
 // Dependencies
-var express = require("express");
 var exphbs = require("express-handlebars");
+var express = require("express");
 
-
-// Create an instance of the express app.
-var app = express();
-
-// Set the port of our application
-// process.env.PORT lets the port be set by Heroku
 var PORT = process.env.PORT || 3000;
 
-// Set Handlebars as the default templating engine.
+var app = express();
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
+// Parse request body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//test data
-var icecreams = [
-    {name: 'vanilla', price: 10, awesomeness: 3},
-    {name: 'chocolate', price: 4, awesomeness: 8},
-    {name: 'banana', price: 1, awesomeness: 1},
-    {name: 'greentea', price: 5, awesomeness: 7},
-    {name: 'jawbreakers', price: 6, awesomeness: 2},
-  ];
-    
+// Import routes and give the server access to them.
+var routes = require("./controllers/burgers_controller.js");
 
-//Routes
-app.get("/index/", function(req, res) {
-    // for (var i = 0; i<icecreams.length; i++){
-    //     if (icecreams[i].name === req.params.name){
-            console.log(icecreams)
-            return res.render("index", icecreams);
-        });
-  
+app.use(routes);
 
-// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+  console.log("App now listening at localhost:" + PORT);
+});
