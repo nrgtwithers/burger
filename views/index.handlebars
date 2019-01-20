@@ -1,13 +1,10 @@
 {{!-- //Render data --}}
-{{!-- {{#each burgers}}
-<h4>{{this.burger_name}}</h4>
-{{/each}} --}}
 
 <div class="row">
   <div class="col-md-3"></div>
   <div class="col-md-3">
 
-    <h4>Burgers to be eaten</h4>
+    <h3>BURGERS TO BE CONSUMED:</h3>
 
       {{#each burgers}}
       {{#unless devoured}}
@@ -19,7 +16,7 @@
 
   <div class="col-md-3">
 
-    <h4>Burgers eaten</h4>
+    <h3>BURGERS DEVOURED:</h3>
 
     <ul>
       {{#each burgers}}
@@ -32,15 +29,15 @@
   <div class="col-md-3"></div>
 
 </div>
-<h3>Add a Burger</h3>
+<h3>ADD A BURGER.</h3>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="burger">Make it yummy..</label><br>
+    <label for="burger">MAKE IT YUMMY!</label><br>
     <textarea id="burger" name="name" rows="2" cols="40"></textarea>
   </div>
 
-  <button type="submit">Add a burger.</button>
+  <button type="submit">SUBMIT</button>
 </form>
 
 <!-- Pass in data from server.js -->
