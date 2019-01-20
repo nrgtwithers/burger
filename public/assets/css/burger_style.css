@@ -10,3 +10,32 @@ body{
 .logo{
     padding: 0px !important;
 }
+  
+p {
+    padding: 5px;
+    margin: 5px;
+    background: darkgrey;
+  }
+  
+.label {
+    font-weight: bold;
+  }
+  
+.create-update-form {
+    padding: 5px;
+    margin: 5px;
+    background: darkgrey;
+  }
+  
+.form-group {
+    margin-bottom: 5px;
+  }
+
+.col-md-3{
+    text-align: center;
+}
+
+h3,h4{
+    color: red !important;
+}
+  
