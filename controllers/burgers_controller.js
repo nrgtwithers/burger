@@ -9,16 +9,23 @@ router.get('/', function (req, res) {
 })
 
 router.post('/api/burgers', function (req, res) {
-    console.log(req.body)
+    // console.log(req.body)
     burger.insertOne([req.body.burger_name], function (data) {
         res.render("index", data);
     })
 })
 
 router.put('/api/burgers/:id', function (req, res) {
-    console.log(req.params.id)
+    // console.log(req.params.id)
     burger.updateOne([req.params.id], function (data) {
         res.render("index", data);
+    })
+})
+
+router.delete("/api/burger/delete/:id", function(req,res){
+    console.log(req.params.id);
+    burger.deleteOne([req.params.id], function(data){
+        res.render("index", data)
     })
 })
 

@@ -20,6 +20,11 @@ var burger = {
         orm.updateOne([id], function(res){
             callback(res);
         })
+    },
+    deleteOne: function(id, callback){
+        orm.deleteOne([id], function(res){
+            callback(res);
+        })
     }
 }
 
