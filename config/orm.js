@@ -82,15 +82,17 @@ var orm = {
             if (err) throw err;
             callback(res);
         })
-    },
-    insertOne: function (callback) {
-        connection.query("INSERT INTO burgers VALUES (?)", function (err, res) {
+    }, 
+    insertOne: function (burger_name, callback) {
+      console.log("orm", burger_name)
+        connection.query("INSERT INTO burgers (burger_name, devoured) VALUES (?,?)", [burger_name, 0], function (err, res) {
             if (err) throw err;
             callback(res);
+            // console.log(res);
         })
     },
-    updateOne: function (callback) {
-        connection.query("'UPDATE burgers SET ? WHERE ?'", function (err, res) {
+    updateOne: function (id, callback) {
+        connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?",[id], function (err, res) {
             if (err) throw err;
             callback(res);
         })

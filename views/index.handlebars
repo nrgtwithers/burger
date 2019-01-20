@@ -8,7 +8,7 @@
 
       {{#each burgers}}
       {{#unless devoured}}
-      {{> burgers/burger-block sleep=true}}
+      {{> burgers/burger-block devoured=true}}
       {{/unless}}
       {{/each}}
 
@@ -21,7 +21,7 @@
     <ul>
       {{#each burgers}}
       {{#if devoured}}
-      {{> burgers/burger-block sleep=false}}
+      {{> burgers/burger-block devoured=false}}
       {{/if}}
       {{/each}}
     </ul>
@@ -39,22 +39,3 @@
 
   <button type="submit">SUBMIT</button>
 </form>
-
-<!-- Pass in data from server.js -->
-{{!-- {{#each burgers}}
-<p><span class="label"></span> {{this.id}}. {{this.burger_name}}</p>
-<button data-id="{{this.id}}" class="delquote">Devour it!</button>
-{{/each}}
-
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="quo">
-      <h2>Add a YUMMY burger!</h2>
-    </label>
-    <br>
-    <textarea id="burger" name="name" rows="2" cols="40"></textarea>
-  </div>
-
-  <button type="submit">Submit</button>
-</form>  --}}

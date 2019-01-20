@@ -10,13 +10,14 @@ var burger = {
             callback(res);
         })
     },
-    insertOne: function (callback) {
-        orm.insertOne(function (res) {
+    insertOne: function (burger_name, callback) {
+        console.log("burger", burger_name)
+        orm.insertOne([burger_name], function(res) {
             callback(res);
         })
     },
-    updateOne: function (callback){
-        orm.updateOne(function(res){
+    updateOne: function (id, callback){
+        orm.updateOne([id], function(res){
             callback(res);
         })
     }

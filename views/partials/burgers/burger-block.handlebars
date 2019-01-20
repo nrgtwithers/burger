@@ -1,7 +1,8 @@
 <p>
-	{{this.id}}. {{this.burger_name}}
-
-	<button class="change-devoured" data-id="{{id}}" data-ifDevoured="{{devoured}}">
-		{{#if sleep}}DEVOUR IT!{{else}}RECREATE{{/if}}
-	</button>
+    {{this.id}}. {{this.burger_name}}
+    {{#if devoured}}
+    <button class="change-devoured" data-id="{{id}}" data-ifDevoured="{{devoured}}">
+        DEVOUR IT!
+    </button>
+    {{/if}}
 </p>
