@@ -7,9 +7,9 @@ The `Eat-Da-Burger` app provides the ability for users to type in different type
 
 ### Tasks to be completed 
 
--[x] Add comments describing code & demonstration of app via screenshot/video.
+- [x] Add comments describing code & demonstration of app via screenshot/video.
 
--[x] Create an amazing README.md
+- [x] Create an amazing README.md
 
 #### Technologies used
 
