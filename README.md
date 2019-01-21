@@ -1,22 +1,15 @@
 # Eat-Da-Burger
 
-This is a heroku deployed app about eating burgers! YUM!
+## Overview
+The `Eat-Da-Burger` app provides the ability for users to type in different types of burgers that they would like to eat. It also provides the option to devour the burgers they submit and to delete the burgers they want to devour or has already been devoured as well. This is a heroku deployed app and you maybe be able to see the live demo [here](https://quiet-bastion-22581.herokuapp.com/).
+
+![screenshot](https://github.com/nrgtwithers/burger/blob/master/burger-demonstration.png?raw=true)
 
 ### Tasks to be completed 
 
--[x] Create github and get heroku deployed/linked
+- [x] Add comments describing code & demonstration of app via screenshot/video.
 
--[x] Create necessary files in proper order and push to github/heroku
-
--[x] Create the database
-
--[x] Work on connections using handlebars/express/ etc
-
--[x] Make sure everything it function
-
--[x] Work on the details
-
--[x] Create an amazing README.md :happy:
+- [x] Create an amazing README.md
 
 #### Technologies used
 
