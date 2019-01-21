@@ -23,7 +23,7 @@ router.put('/api/burgers/:id', function (req, res) {
 })
 
 router.delete("/api/burger/delete/:id", function(req,res){
-    console.log(req.params.id);
+    // console.log(req.params.id);
     burger.deleteOne([req.params.id], function(data){
         res.render("index", data)
     })

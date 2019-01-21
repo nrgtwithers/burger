@@ -8,7 +8,7 @@ var orm = {
         })
     }, 
     insertOne: function (burger_name, callback) {
-      console.log("orm", burger_name)
+      // console.log("orm", burger_name)
         connection.query("INSERT INTO burgers (burger_name, devoured) VALUES (?,?)", [burger_name, 0], function (err, res) {
             if (err) throw err;
             callback(res);
